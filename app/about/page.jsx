@@ -1,4 +1,4 @@
-// src/app/about/page.js
+// src/app/about/page.jsx
 import Image from 'next/image';
 
 export const metadata = {
@@ -22,10 +22,10 @@ export default function AboutPage() {
           />
           <p>
             Here you can write about yourself - who you are, what your interests are,
-            what drives you, and what your core skills are. For example: "I'm Ori Shemer,
+            what drives you, and what your core skills are. For example: &quot;I&apos;m Ori Shemer,
             a [Your Profession] with experience in [specific fields]. I specialize in
             [key skills] and love solving complex problems while creating impressive user experiences.
-            In this portfolio, you can explore a variety of my projects."
+            In this portfolio, you can explore a variety of my projects.&quot;
           </p>
           <p>
             **Skills:** HTML5, CSS3, JavaScript, React, Next.js, Node.js, Photoshop, Figma, etc.
