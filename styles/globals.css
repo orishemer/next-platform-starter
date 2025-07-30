@@ -74,3 +74,140 @@ p {
   background-color: transparent;
   color: var(--primary-color);
 }
+
+/* הוסף ל-src/app/globals.css */
+
+/* כותרת עליונה (Header) */
+.main-header {
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color); /* קו אפור מפריד */
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* לגלישה בשורות קטנות */
+}
+
+.site-title {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.site-title:hover {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 30px; /* רווח בין פריטי התפריט */
+}
+
+.main-nav ul li a {
+  color: var(--text-color);
+  font-weight: 400;
+  font-size: 1.1em;
+  padding-bottom: 5px; /* למקום לקו התחתון בהובר */
+  position: relative; /* לשימוש בפס תחתון */
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    right: 0; /* ימין כי הכיוון RTL */
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after { /* אם תרצה להוסיף קלאס active */
+    width: 100%;
+    left: 0;
+}
+
+/* פוטר (Footer) */
+.main-footer {
+  background-color: var(--background-color);
+  border-top: 1px solid var(--border-color); /* קו אפור מפריד */
+  color: var(--text-color);
+  text-align: center;
+  padding: 30px 0;
+  font-size: 0.9em;
+  margin-top: 50px;
+}
+
+/* רספונסיביות עבור תפריט */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        align-items: flex-end; /* יישור לימין בכותרת */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+        width: 100%;
+        text-align: right;
+    }
+    .main-nav ul li a {
+      font-size: 1em;
+    }
+}
+
+/* הוסף ל-src/app/globals.css */
+
+/* סקשן גיבור (Hero Section) */
+.hero-section {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 180px); /* גובה מינימלי למילוי המסך בניכוי גובה ה-header וה-footer */
+}
+
+.hero-section h2 {
+  color: var(--text-color);
+  font-size: 3.5em;
+  margin-bottom: 10px;
+}
+
+.hero-section .tagline {
+  font-size: 1.6em;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.hero-section .btn {
+    margin: 0 10px; /* רווח בין הכפתורים */
+}
+
+@media (max-width: 768px) {
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+    .hero-section .tagline {
+        font-size: 1.3em;
+    }
+    .hero-section .btn {
+        display: block;
+        margin: 15px auto;
+        width: fit-content;
+    }
+}

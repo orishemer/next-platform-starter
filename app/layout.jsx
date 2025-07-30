@@ -1,29 +1,58 @@
-import '../styles/globals.css';
-import { Footer } from '../components/footer';
-import { Header } from '../components/header';
+// src/app/layout.js
+import './globals.css';
+import Link from 'next/link';
 
 export const metadata = {
-    title: {
-        template: '%s | Netlify',
-        default: 'Netlify Starter'
-    }
+  title: 'הפורטפוליו של אורי',
+  description: 'פורטפוליו אישי המציג את עבודותיי וכישורי',
 };
 
 export default function RootLayout({ children }) {
-    return (
-        <html lang="en">
-            <head>
-                <link rel="icon" href="/favicon.svg" sizes="any" />
-            </head>
-            <body className="antialiased text-white bg-blue-900">
-                <div className="flex flex-col min-h-screen px-6 bg-noise sm:px-12">
-                    <div className="flex flex-col w-full max-w-5xl mx-auto grow">
-                        <Header />
-                        <main className="grow">{children}</main>
-                        <Footer />
-                    </div>
-                </div>
-            </body>
-        </html>
-    );
+  return (
+    <html lang="he">
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}
+
+function Header() {
+  return (
+    <header className="main-header">
+      <div className="container">
+        <Link href="/" className="site-title">
+          [השם שלך]
+        </Link>
+        <nav className="main-nav">
+          <ul>
+            <li>
+              <Link href="/">בית</Link>
+            </li>
+            <li>
+              <Link href="/about">אודותיי</Link>
+            </li>
+            <li>
+              <Link href="/projects">פרויקטים</Link>
+            </li>
+            <li>
+              <Link href="/contact">צור קשר</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="main-footer">
+      <div className="container">
+        <p>&copy; {new Date().getFullYear()} [השם שלך]. כל הזכויות שמורות.</p>
+      </div>
+    </footer>
+  );
 }
