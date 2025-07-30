@@ -1,21 +1,22 @@
+/* src/app/globals.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap'); /* You can change this to an English font like 'Roboto', 'Open Sans', etc. */
 
 :root {
-  --primary-color: #3498db; /* כחול */
-  --text-color: #333;      /* שחור כהה */
-  --background-color: #ffffff; /* לבן */
-  --border-color: #e0e0e0; /* אפור בהיר לגבולות כלליים */
+  --primary-color: #3498db; /* Blue */
+  --text-color: #333;      /* Dark Black */
+  --background-color: #ffffff; /* White */
+  --border-color: #e0e0e0; /* Light Gray for general borders */
 }
 
 html, body {
   padding: 0;
   margin: 0;
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Heebo', sans-serif; /* Consider changing this font for English text */
   color: var(--text-color);
   background-color: var(--background-color);
-  direction: rtl; /* ליישור מימין לשמאל */
-  text-align: right; /* יישור טקסט לימין */
+  /* direction: rtl; Commented out for LTR */
+  /* text-align: right; Commented out for LTR */
 }
 
 a {
@@ -30,7 +31,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
   margin-bottom: 1rem;
-  text-align: center; /* יישור כותרות למרכז */
+  text-align: center;
 }
 
 p {
@@ -44,13 +45,13 @@ p {
   padding: 0 20px;
 }
 
-/* כפתורים */
+/* Buttons */
 .btn {
   display: inline-block;
   padding: 12px 25px;
-  border: 2px solid var(--primary-color); /* קו כחול סביב הכפתור */
+  border: 2px solid var(--primary-color); /* Blue border around the button */
   border-radius: 5px;
-  background-color: transparent; /* רקע שקוף */
+  background-color: transparent; /* Transparent background */
   color: var(--primary-color);
   font-weight: bold;
   cursor: pointer;
@@ -64,7 +65,7 @@ p {
   text-decoration: none;
 }
 
-/* כפתור ראשי עם מילוי */
+/* Filled primary button */
 .btn.filled {
   background-color: var(--primary-color);
   color: var(--background-color);
@@ -75,12 +76,10 @@ p {
   color: var(--primary-color);
 }
 
-/* הוסף ל-src/app/globals.css */
-
-/* כותרת עליונה (Header) */
+/* Header */
 .main-header {
   background-color: var(--background-color);
-  border-bottom: 1px solid var(--border-color); /* קו אפור מפריד */
+  border-bottom: 1px solid var(--border-color);
   padding: 1.5rem 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
@@ -89,7 +88,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* לגלישה בשורות קטנות */
+  flex-wrap: wrap;
 }
 
 .site-title {
@@ -109,15 +108,15 @@ p {
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 30px; /* רווח בין פריטי התפריט */
+  gap: 30px;
 }
 
 .main-nav ul li a {
   color: var(--text-color);
   font-weight: 400;
   font-size: 1.1em;
-  padding-bottom: 5px; /* למקום לקו התחתון בהובר */
-  position: relative; /* לשימוש בפס תחתון */
+  padding-bottom: 5px;
+  position: relative;
 }
 
 .main-nav ul li a::after {
@@ -126,21 +125,20 @@ p {
     width: 0;
     height: 2px;
     bottom: 0;
-    right: 0; /* ימין כי הכיוון RTL */
+    left: 0; /* Left for LTR */
     background-color: var(--primary-color);
     transition: width 0.3s ease;
 }
 
 .main-nav ul li a:hover::after,
-.main-nav ul li a.active::after { /* אם תרצה להוסיף קלאס active */
+.main-nav ul li a.active::after {
     width: 100%;
-    left: 0;
 }
 
-/* פוטר (Footer) */
+/* Footer */
 .main-footer {
   background-color: var(--background-color);
-  border-top: 1px solid var(--border-color); /* קו אפור מפריד */
+  border-top: 1px solid var(--border-color);
   color: var(--text-color);
   text-align: center;
   padding: 30px 0;
@@ -148,11 +146,11 @@ p {
   margin-top: 50px;
 }
 
-/* רספונסיביות עבור תפריט */
+/* Responsive Menu */
 @media (max-width: 768px) {
     .main-header .container {
         flex-direction: column;
-        align-items: flex-end; /* יישור לימין בכותרת */
+        align-items: center;
     }
 
     .main-nav ul {
@@ -160,16 +158,14 @@ p {
         gap: 10px;
         margin-top: 20px;
         width: 100%;
-        text-align: right;
+        text-align: center;
     }
     .main-nav ul li a {
       font-size: 1em;
     }
 }
 
-/* הוסף ל-src/app/globals.css */
-
-/* סקשן גיבור (Hero Section) */
+/* Hero Section */
 .hero-section {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -179,7 +175,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 180px); /* גובה מינימלי למילוי המסך בניכוי גובה ה-header וה-footer */
+  min-height: calc(100vh - 180px);
 }
 
 .hero-section h2 {
@@ -195,7 +191,7 @@ p {
 }
 
 .hero-section .btn {
-    margin: 0 10px; /* רווח בין הכפתורים */
+    margin: 0 10px;
 }
 
 @media (max-width: 768px) {
@@ -209,5 +205,139 @@ p {
         display: block;
         margin: 15px auto;
         width: fit-content;
+    }
+}
+
+/* About, Projects, Contact Sections */
+.about-section,
+.projects-section,
+.contact-section {
+  padding: 60px 0;
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about-section h2,
+.projects-section h2,
+.contact-section h2 {
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.about-section h2::after,
+.projects-section h2::after,
+.contact-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center; /* Changed to center for LTR */
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.about-content p {
+    text-align: left; /* Changed to left for LTR */
+    margin: 0 auto;
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-item {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.project-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-item h3 {
+    margin: 15px 0 10px;
+    color: var(--text-color);
+    padding: 0 20px;
+}
+
+.project-item p {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    text-align: left; /* Changed to left for LTR */
+    font-size: 0.95em;
+}
+
+/* Contact Section */
+.contact-info {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    font-weight: 500;
+}
+
+/* General Responsiveness */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 0 10px;
+    }
+    .project-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    .project-item {
+        margin: 0 auto;
     }
 }
