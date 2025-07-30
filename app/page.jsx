@@ -1,4 +1,4 @@
-// src/app/page.js
+// src/app/page.jsx
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,12 +8,12 @@ export default function HomePage() {
       <div className="container">
         <h2>Welcome to My Portfolio</h2>
         <p className="tagline">
-          I'm a [Your Profession, e.g.: Web Developer | Graphic Designer | Digital Artist]
+          I&apos;m a [Your Profession, e.g.: Web Developer | Graphic Designer | Digital Artist]
         </p>
         <Link href="/projects" className="btn">
           View My Work
         </Link>
-        <Link href="/contact" className="btn filled" style={{ marginLeft: '15px' }}> {/* Adjusted for LTR margin */}
+        <Link href="/contact" className="btn filled" style={{ marginLeft: '15px' }}>
           Contact Me
         </Link>
       </div>
