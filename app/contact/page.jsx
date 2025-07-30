@@ -9,7 +9,7 @@ export default function ContactPage() {
     <section id="contact" className="contact-section">
       <div className="container">
         <h2>Contact Me</h2>
-        <p>I'd love to hear from you! You can reach me through the following:</p>
+            <p>I&apos;d love to hear from you! You can reach me through the following:</p>
         <div className="contact-info">
           <p>
             <strong>Email:</strong>{' '}
