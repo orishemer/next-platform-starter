@@ -1,5 +1,6 @@
 // src/app/about/page.jsx
 import Image from 'next/image';
+import ModelViewer from '../../components/ModelViewer'; // Import the new component
 
 export const metadata = {
   title: 'About - Ori Shemer',
@@ -13,7 +14,7 @@ export default function AboutPage() {
         <h2>About Me</h2>
         <div className="about-content">
           <Image
-            src="/images/your-photo.jpg" // Ensure this image is in public/images folder
+            src="/images/your-photo.jpg"
             alt="Your Photo"
             width={250}
             height={250}
@@ -28,8 +29,19 @@ export default function AboutPage() {
             In this portfolio, you can explore a variety of my projects.&quot;
           </p>
           <p>
-            **Skills:** HTML5, CSS3, JavaScript, React, Next.js, Node.js, Photoshop, Figma, etc.
+            **Skills:** HTML5, CSS3, JavaScript, React, Next.js, Node.js, Photoshop, Figma, 3D Modeling, etc.
           </p>
+
+          {/* Add the ModelViewer component here */}
+          <div style={{ marginTop: '50px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <h3>Interactive 3D Model of [Your Model's Name/Purpose]</h3>
+          </div>
+          <ModelViewer
+            modelPath="/fullCurrent.glb" // Path to your GLB file in the public folder
+            width="80%" // Example width
+            height="600px" // Example height
+          />
+
         </div>
       </div>
     </section>
