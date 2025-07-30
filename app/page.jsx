@@ -6,15 +6,15 @@ export default function HomePage() {
   return (
     <section id="home" className="hero-section">
       <div className="container">
-        <h2>ברוכים הבאים לפורטפוליו שלי</h2>
+        <h2>Hi! Welcom to my portfolio</h2>
         <p className="tagline">
-          אני [התפקיד שלך, לדוגמה: מפתח ווב | מעצב גרפי | אמן דיגיטלי]
+          im a designer and developer.
         </p>
         <Link href="/projects" className="btn">
-          צפה בעבודות שלי
+          my projects
         </Link>
         <Link href="/contact" className="btn filled" style={{ marginRight: '15px' }}> {/* רווח בין כפתורים */}
-          צור קשר
+          contact me 
         </Link>
       </div>
     </section>
