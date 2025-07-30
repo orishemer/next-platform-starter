@@ -50,7 +50,7 @@ export default function Page() {
 }
 
 function RuntimeContextCard() {
-    const title = `Netlify Context: running in ${ctx} mode.`;
+    const title = `Hi! welcom to the Netlify Platform Starter for Next.js!`;
     if (ctx === 'dev') {
         return (
             <Card title={title}>
